@@ -1,0 +1,214 @@
+[gd_scene format=3 uid="uid://t3eqx0wwr5co"]
+
+[ext_resource type="Script" uid="uid://b5xssnpqkntnd" path="res://scripts/hud/joystick.gd" id="1_iecap"]
+[ext_resource type="Texture2D" uid="uid://dkrpissfcpck" path="res://asset/UI/UI_2.png" id="2_ayk53"]
+[ext_resource type="Script" uid="uid://bwoxvaee3v5es" path="res://scripts/hud/attack_button.gd" id="2_xgi10"]
+[ext_resource type="Script" uid="uid://cldhpos1d8ds8" path="res://scripts/hud/dodge_button.gd" id="3_4be4c"]
+[ext_resource type="Texture2D" uid="uid://b2jwi4yko1oco" path="res://asset/UI/UI_1.png" id="5_ayk53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql73s"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(1, 1, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0s4m"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(64, 19, 23, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayk53"]
+texture = ExtResource("5_ayk53")
+region_rect = Rect2(78, 80, 42, 44)
+modulate_color = Color(0, 0, 0, 0.53333336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31a6w"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(78, 80, 42, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31a6w"]
+texture = ExtResource("5_ayk53")
+region_rect = Rect2(31, 80, 42, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mw20a"]
+texture = ExtResource("5_ayk53")
+region_rect = Rect2(31, 80, 42, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68em5"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(31, 80, 42, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyg6f"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(28, 56, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p310p"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(31, 11, 90, 10)
+margin = Rect2(2, 2, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeq8l"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(5, 5, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayk53"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(28, 56, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw20a"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(31, 35, 90, 10)
+margin = Rect2(2, 2, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdhfp"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(5, 29, 20, 21)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=499225268]
+
+[node name="HUD" type="Control" parent="." unique_id=1036164085]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="joystick" type="Control" parent="HUD" unique_id=394176464]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.00001
+offset_top = -228.0
+offset_right = 64.00001
+offset_bottom = -228.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_iecap")
+
+[node name="base" type="TextureRect" parent="HUD/joystick" unique_id=1982267515]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = SubResource("AtlasTexture_ql73s")
+
+[node name="knob" type="TextureRect" parent="HUD/joystick" unique_id=1295330922]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 82.00001
+offset_bottom = 82.00001
+texture = SubResource("AtlasTexture_v0s4m")
+
+[node name="attack_button" type="Button" parent="HUD" unique_id=1610719537]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -164.0
+offset_right = -206.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ayk53")
+action_mode = 0
+icon = SubResource("AtlasTexture_31a6w")
+flat = true
+icon_alignment = 1
+script = ExtResource("2_xgi10")
+
+[node name="dodge_button" type="Button" parent="HUD" unique_id=1811484888]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -268.0
+offset_right = -110.0
+offset_bottom = -216.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_31a6w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mw20a")
+action_mode = 0
+icon = SubResource("AtlasTexture_68em5")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_4be4c")
+
+[node name="stamina_warning" type="Label" parent="." unique_id=1613996045]
+visible = false
+modulate = Color(0.4392157, 0.14901961, 0.12156863, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -8.0
+offset_right = -13.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.5, 2.5)
+theme_override_font_sizes/font_size = 20
+text = "NOT ENOUGH STAMINA"
+horizontal_alignment = 1
+
+[node name="health_bar" type="TextureProgressBar" parent="." unique_id=2105583905]
+offset_left = 72.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = SubResource("AtlasTexture_dyg6f")
+texture_progress = SubResource("AtlasTexture_p310p")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="health_text" type="Label" parent="health_bar" unique_id=1433373129]
+layout_mode = 0
+offset_left = 37.333336
+offset_top = 2.3333333
+offset_right = 67.333336
+offset_bottom = 15.333333
+scale = Vector2(0.8, 0.8)
+text = "100/100"
+
+[node name="health_icon" type="Sprite2D" parent="health_bar/health_text" unique_id=1785608627]
+position = Vector2(-60, 7.083333)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_oeq8l")
+
+[node name="stamina_bar" type="TextureProgressBar" parent="." unique_id=360507956]
+offset_left = 72.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 96.0
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = SubResource("AtlasTexture_ayk53")
+texture_progress = SubResource("AtlasTexture_mw20a")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="stamina_text" type="Label" parent="stamina_bar" unique_id=1366738067]
+layout_mode = 0
+offset_left = 37.333332
+offset_top = 1.6666667
+offset_right = 67.33333
+offset_bottom = 14.666667
+scale = Vector2(0.8, 0.8)
+text = "100/100"
+
+[node name="stamina_icon" type="Sprite2D" parent="stamina_bar/stamina_text" unique_id=581325391]
+position = Vector2(-59.999996, 7.916665)
+scale = Vector2(1.2, 1.18)
+texture = SubResource("AtlasTexture_sdhfp")

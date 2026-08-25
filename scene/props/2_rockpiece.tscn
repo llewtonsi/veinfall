@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cv5h4xcf1p4wn"]
+
+[ext_resource type="Texture2D" uid="uid://b7uapsx2sp1kd" path="res://asset/object/props1.png" id="1_5iwp6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql73s"]
+atlas = ExtResource("1_5iwp6")
+region = Rect2(18, 44, 14, 11)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5iwp6"]
+radius = 2.0
+height = 14.0
+
+[node name="2_rockpiece" type="StaticBody2D" unique_id=1366771539]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1589339175]
+position = Vector2(0, 10)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_ql73s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1425833026]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5iwp6")

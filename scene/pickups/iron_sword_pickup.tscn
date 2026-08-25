@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://carlp4o5ev45m"]
+
+[ext_resource type="Script" uid="uid://b830sbj6a856g" path="res://scripts/item/pickup.gd" id="1_004o6"]
+[ext_resource type="Texture2D" uid="uid://crpqrivww1xrs" path="res://asset/weapon/iron_sword.png" id="2_einkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2gno"]
+size = Vector2(30, 16)
+
+[node name="iron_sword_pickup" type="Area2D" unique_id=727872455]
+script = ExtResource("1_004o6")
+item_name = "iron_sword"
+
+[node name="iron_sword_sprite" type="Sprite2D" parent="." unique_id=1110268988]
+position = Vector2(0, 11.000001)
+rotation = 0.7853982
+texture = ExtResource("2_einkp")
+
+[node name="ironsword_collisonbox" type="CollisionShape2D" parent="." unique_id=809243414]
+position = Vector2(1, 11)
+shape = SubResource("RectangleShape2D_e2gno")

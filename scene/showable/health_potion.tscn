@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d1peww0id2mfq"]
+
+[ext_resource type="Texture2D" uid="uid://bgt857yjdlgle" path="res://asset/item/health_potion.png" id="1_i4y34"]
+
+[node name="health_potion" type="Node2D" unique_id=2128019232]
+position = Vector2(-2.0000007, -0.99999994)
+rotation = 1.3962634
+scale = Vector2(0.4, 0.4)
+
+[node name="health_potion_sprite" type="Sprite2D" parent="." unique_id=1914412106]
+texture = ExtResource("1_i4y34")

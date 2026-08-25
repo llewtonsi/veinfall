@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cu2vfuq4gliup"]
+
+[ext_resource type="Script" uid="uid://5dg176m4tnr0" path="res://scripts/hud/loading_screen.gd" id="1_126je"]
+[ext_resource type="Texture2D" uid="uid://b2jwi4yko1oco" path="res://asset/UI/UI_1.png" id="2_2nubw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_126je"]
+atlas = ExtResource("2_2nubw")
+region = Rect2(28, 56, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nubw"]
+atlas = ExtResource("2_2nubw")
+region = Rect2(31, 11, 90, 10)
+margin = Rect2(3, 3, 3, 3)
+
+[node name="loading_screen" type="Control" unique_id=1089645342]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_126je")
+
+[node name="loading_text" type="Label" parent="." unique_id=1224790651]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -97.00006
+offset_top = -6.0
+offset_right = -58.00006
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+text = "LOADING"
+
+[node name="progress_bar" type="TextureProgressBar" parent="." unique_id=487089960]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = 74.0
+offset_right = -48.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = SubResource("AtlasTexture_126je")
+texture_progress = SubResource("AtlasTexture_2nubw")

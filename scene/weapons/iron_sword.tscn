@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://33jxpl0mdq7q"]
+
+[ext_resource type="Texture2D" uid="uid://crpqrivww1xrs" path="res://asset/weapon/iron_sword.png" id="1_e2gno"]
+
+[node name="iron_sword" type="Node2D" unique_id=1759236737]
+
+[node name="iron_sword_sprite" type="Sprite2D" parent="." unique_id=2139426704]
+position = Vector2(8, -1)
+rotation = 0.6981317
+texture = ExtResource("1_e2gno")

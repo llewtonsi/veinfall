@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ctspu3ajahsv4"]
+
+[ext_resource type="Texture2D" uid="uid://b7uapsx2sp1kd" path="res://asset/object/props1.png" id="1_hfylw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0s4m"]
+atlas = ExtResource("1_hfylw")
+region = Rect2(23, 2, 19, 17)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ql73s"]
+radius = 4.0
+height = 12.0
+
+[node name="tree_stump1" type="StaticBody2D" unique_id=1281985124]
+scale = Vector2(1.5, 1.5)
+
+[node name="Props1" type="Sprite2D" parent="." unique_id=425470023]
+position = Vector2(0, 9)
+texture = SubResource("AtlasTexture_v0s4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=409099757]
+position = Vector2(0, 9)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_ql73s")

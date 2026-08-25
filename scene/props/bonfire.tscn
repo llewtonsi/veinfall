@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://dondofvq1omk5"]
+
+[ext_resource type="Texture2D" uid="uid://c8g5yph3jkqft" path="res://asset/object/bonfire.png" id="1_sarb3"]
+[ext_resource type="Texture2D" uid="uid://cq7lw5jq0t4uv" path="res://asset/object/white_radient2.jpg" id="2_sarb3"]
+[ext_resource type="Script" uid="uid://br5uju7o1ygeb" path="res://scripts/effects/light.gd" id="3_w8i2w"]
+
+[sub_resource type="Gradient" id="Gradient_sarb3"]
+offsets = PackedFloat32Array(0, 0.33146068, 0.6573034, 1)
+colors = PackedColorArray(1, 1, 0.5882353, 1, 1, 0.69803923, 0.19607843, 1, 1, 0.42745098, 0.22745098, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sdhfp"]
+gradient = SubResource("Gradient_sarb3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v0s4m"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 50.0
+initial_velocity_min = 10.0
+initial_velocity_max = 25.0
+gravity = Vector3(0, -25, 0)
+scale_min = 0.79999995
+scale_max = 1.5
+color = Color(1, 0.627451, 0.15686275, 1)
+color_ramp = SubResource("GradientTexture1D_sdhfp")
+turbulence_noise_scale = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sarb3"]
+atlas = ExtResource("1_sarb3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj4jd"]
+atlas = ExtResource("1_sarb3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8i2w"]
+atlas = ExtResource("1_sarb3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji6qr"]
+atlas = ExtResource("1_sarb3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4nrt"]
+atlas = ExtResource("1_sarb3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oum8d"]
+atlas = ExtResource("1_sarb3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ql73s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sarb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj4jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8i2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji6qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4nrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oum8d")
+}],
+"loop": 1,
+"name": &"bonfire",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hfriu"]
+radius = 6.0
+height = 26.0
+
+[node name="bonfire" type="Node2D" unique_id=296997628]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1835776244]
+position = Vector2(0, 8.50001)
+scale = Vector2(0.99999994, 0.99999994)
+amount = 20
+lifetime = 1.2
+process_material = SubResource("ParticleProcessMaterial_v0s4m")
+
+[node name="bonfire_sprite" type="AnimatedSprite2D" parent="." unique_id=1498964278]
+position = Vector2(0, 12.249997)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_ql73s")
+animation = &"bonfire"
+autoplay = "bonfire"
+frame_progress = 0.70147526
+
+[node name="light" type="PointLight2D" parent="." unique_id=1273581629]
+position = Vector2(0, 13.750004)
+scale = Vector2(0.9999998, 0.9999998)
+color = Color(1, 0.74509805, 0.3529412, 1)
+energy = 1.5
+texture = ExtResource("2_sarb3")
+script = ExtResource("3_w8i2w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=893950748]
+position = Vector2(0, 18.249996)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1456516423]
+position = Vector2(0, -2.2499962)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hfriu")

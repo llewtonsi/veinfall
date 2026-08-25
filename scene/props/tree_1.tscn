@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b67tawae12wee"]
+
+[ext_resource type="Texture2D" uid="uid://dygtycx1dhreo" path="res://asset/object/tree1.png" id="1_d1rny"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d1rny"]
+radius = 5.999998
+height = 15.999996
+
+[node name="tree1" type="StaticBody2D" unique_id=1496422183]
+scale = Vector2(1.5, 1.5)
+collision_layer = 3
+collision_mask = 0
+
+[node name="tree_sprite" type="Sprite2D" parent="." unique_id=1658342607]
+position = Vector2(0, -23.999996)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_d1rny")
+
+[node name="tree_collision" type="CollisionShape2D" parent="." unique_id=1712912296]
+position = Vector2(0, 11.33334)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d1rny")

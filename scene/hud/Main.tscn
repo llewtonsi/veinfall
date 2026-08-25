@@ -1,0 +1,958 @@
+[gd_scene format=4 uid="uid://t3eqx0wwr5co"]
+
+[ext_resource type="Script" uid="uid://b5xssnpqkntnd" path="res://scripts/hud/joystick.gd" id="1_iecap"]
+[ext_resource type="Texture2D" uid="uid://dkrpissfcpck" path="res://asset/UI/UI_2.png" id="2_ayk53"]
+[ext_resource type="Script" uid="uid://bwoxvaee3v5es" path="res://scripts/hud/attack_button.gd" id="2_xgi10"]
+[ext_resource type="Script" uid="uid://cldhpos1d8ds8" path="res://scripts/hud/dodge_button.gd" id="3_4be4c"]
+[ext_resource type="Texture2D" uid="uid://b2jwi4yko1oco" path="res://asset/UI/UI_1.png" id="5_ayk53"]
+[ext_resource type="Texture2D" uid="uid://bqucqkh2l316t" path="res://asset/UI/UI_3.png" id="6_68em5"]
+[ext_resource type="Script" uid="uid://dcp707gygtnfb" path="res://scripts/hud/pause_menu.gd" id="7_68em5"]
+[ext_resource type="Script" uid="uid://bgq8rlaphe3bh" path="res://scripts/hud/inventory_menu.gd" id="8_wu6n0"]
+[ext_resource type="Script" uid="uid://bl42syspdgc8r" path="res://scripts/player/inventory_slot.gd" id="9_mp4u5"]
+[ext_resource type="Script" uid="uid://csmoo38mejgqv" path="res://scripts/hud/item_info_panel.gd" id="11_ohanr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyg6f"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(28, 56, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p310p"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(31, 11, 90, 10)
+margin = Rect2(2, 2, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oeq8l"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(5, 5, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayk53"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(28, 56, 96, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw20a"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(31, 35, 90, 10)
+margin = Rect2(2, 2, 2, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdhfp"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(5, 29, 20, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql73s"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(1, 1, 59, 59)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0s4m"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(64, 19, 23, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31a6w"]
+texture = ExtResource("5_ayk53")
+region_rect = Rect2(31, 80, 42, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mw20a"]
+texture = ExtResource("5_ayk53")
+region_rect = Rect2(31, 80, 42, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu6n0"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(31, 80, 42, 44)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayk53"]
+texture = ExtResource("5_ayk53")
+region_rect = Rect2(78, 80, 42, 44)
+modulate_color = Color(0, 0, 0, 0.53333336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31a6w"]
+atlas = ExtResource("5_ayk53")
+region = Rect2(78, 80, 42, 44)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wu6n0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycj30"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(102, 2, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dx06"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(103, 30, 22, 22)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wu6n0"]
+resource_name = "UI_3"
+texture = ExtResource("6_68em5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ql73s"]
+sources/0 = SubResource("TileSetAtlasSource_wu6n0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68em5"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(2, 63, 67, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jyoo"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(2, 63, 67, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iooiy"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(2, 83, 67, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rceul"]
+atlas = ExtResource("6_68em5")
+region = Rect2(67, 23, 60, 18)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iooiy"]
+texture = ExtResource("6_68em5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v0s4m"]
+sources/0 = SubResource("TileSetAtlasSource_iooiy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ad4r"]
+texture = ExtResource("6_68em5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oeq8l"]
+sources/0 = SubResource("TileSetAtlasSource_5ad4r")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar8dh"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(2, 63, 67, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjsa7"]
+atlas = ExtResource("2_ayk53")
+region = Rect2(2, 83, 67, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbjc1"]
+atlas = ExtResource("6_68em5")
+region = Rect2(67, 23, 60, 18)
+
+[node name="Main" type="CanvasLayer" unique_id=499225268]
+
+[node name="health_bar" type="TextureProgressBar" parent="." unique_id=2105583905]
+offset_left = 72.0
+offset_top = 16.0
+offset_right = 168.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = SubResource("AtlasTexture_dyg6f")
+texture_progress = SubResource("AtlasTexture_p310p")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="health_text" type="Label" parent="health_bar" unique_id=1433373129]
+layout_mode = 0
+offset_left = 37.333336
+offset_top = 2.3333333
+offset_right = 67.333336
+offset_bottom = 15.333333
+scale = Vector2(0.8, 0.8)
+text = "100/100"
+
+[node name="health_icon" type="Sprite2D" parent="health_bar/health_text" unique_id=1785608627]
+position = Vector2(-60, 7.083333)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_oeq8l")
+
+[node name="stamina_bar" type="TextureProgressBar" parent="." unique_id=360507956]
+offset_left = 72.0
+offset_top = 80.0
+offset_right = 168.0
+offset_bottom = 96.0
+scale = Vector2(3, 3)
+value = 100.0
+texture_under = SubResource("AtlasTexture_ayk53")
+texture_progress = SubResource("AtlasTexture_mw20a")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="stamina_text" type="Label" parent="stamina_bar" unique_id=1366738067]
+layout_mode = 0
+offset_left = 37.333332
+offset_top = 1.6666667
+offset_right = 67.33333
+offset_bottom = 14.666667
+scale = Vector2(0.8, 0.8)
+text = "100/100"
+
+[node name="stamina_icon" type="Sprite2D" parent="stamina_bar/stamina_text" unique_id=581325391]
+position = Vector2(-59.999996, 7.916665)
+scale = Vector2(1.2, 1.18)
+texture = SubResource("AtlasTexture_sdhfp")
+
+[node name="HUD" type="Control" parent="." unique_id=1036164085]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="joystick" type="Control" parent="HUD" unique_id=394176464]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 64.00001
+offset_top = -228.0
+offset_right = 64.00001
+offset_bottom = -228.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_iecap")
+
+[node name="base" type="TextureRect" parent="HUD/joystick" unique_id=1982267515]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+texture = SubResource("AtlasTexture_ql73s")
+
+[node name="knob" type="TextureRect" parent="HUD/joystick" unique_id=1295330922]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 37.0
+offset_right = 82.00001
+offset_bottom = 82.00001
+texture = SubResource("AtlasTexture_v0s4m")
+
+[node name="dodge_button" type="Button" parent="HUD" unique_id=1811484888]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -268.0
+offset_right = -110.0
+offset_bottom = -216.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_31a6w")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mw20a")
+action_mode = 0
+icon = SubResource("AtlasTexture_wu6n0")
+flat = true
+icon_alignment = 1
+script = ExtResource("3_4be4c")
+
+[node name="attack_button" type="Button" parent="HUD" unique_id=1610719537]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -164.0
+offset_right = -206.0
+offset_bottom = -112.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ayk53")
+action_mode = 0
+icon = SubResource("AtlasTexture_31a6w")
+flat = true
+icon_alignment = 1
+script = ExtResource("2_xgi10")
+
+[node name="pause_button" type="Button" parent="." unique_id=569621363]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_right = -64.0
+offset_bottom = 32.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+focus_mode = 0
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_wu6n0")
+action_mode = 0
+icon = SubResource("AtlasTexture_ycj30")
+flat = true
+icon_alignment = 1
+
+[node name="dark_backround" type="ColorRect" parent="." unique_id=1477134417]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+color = Color(0, 0, 0, 0.3529412)
+
+[node name="inventory_button" type="Button" parent="." unique_id=914898266]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -93.0
+offset_top = 88.0
+offset_right = -63.0
+offset_bottom = 118.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+focus_mode = 0
+icon = SubResource("AtlasTexture_2dx06")
+flat = true
+icon_alignment = 1
+
+[node name="pause_container" type="Control" parent="." unique_id=1838453783]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="pause_menu" type="TileMapLayer" parent="pause_container" unique_id=1689039271]
+process_mode = 3
+visible = false
+position = Vector2(-231.99995, -165.99998)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAAGAAMAAAAGAAYAAAAGAAQAAAAFAAQAAAAGAAUAAAAFAAUAAAAGAAYAAAAFAAYAAAAGAAcAAAAFAAcAAAAHAAMAAAAGAAYAAAAHAAQAAAAGAAQAAAAHAAUAAAAGAAUAAAAHAAYAAAAGAAYAAAAHAAcAAAAGAAcAAAAIAAMAAAAEAAYAAAAIAAQAAAAEAAQAAAAIAAUAAAAEAAUAAAAIAAYAAAAEAAYAAAAIAAcAAAAEAAcAAAAJAAMAAAAHAAYAAAAJAAQAAAAHAAQAAAAJAAUAAAAHAAUAAAAJAAYAAAAHAAYAAAAJAAcAAAAHAAcAAAACAAAAAAADAAMAAAACAAEAAAADAAQAAAACAAIAAAADAAUAAAACAAMAAAADAAYAAAACAAUAAAADAAYAAAACAAYAAAADAAYAAAACAAcAAAADAAcAAAADAAAAAAAGAAMAAAADAAEAAAAGAAQAAAADAAIAAAAGAAUAAAADAAMAAAAGAAYAAAADAAQAAAAGAAQAAAADAAUAAAAGAAUAAAADAAYAAAAGAAYAAAADAAcAAAAEAAcAAAAEAAAAAAAEAAMAAAAEAAEAAAAEAAQAAAAEAAIAAAAEAAUAAAAEAAMAAAAEAAYAAAAEAAQAAAAEAAQAAAAEAAUAAAAEAAUAAAAEAAYAAAAEAAYAAAAEAAcAAAAFAAcAAAAFAAAAAAAEAAMAAAAFAAEAAAAFAAQAAAAFAAIAAAAFAAUAAAAFAAMAAAAFAAYAAAAFAAQAAAAEAAQAAAAFAAUAAAAEAAUAAAAFAAYAAAAEAAYAAAAFAAcAAAAGAAcAAAAGAAAAAAAFAAMAAAAGAAEAAAAGAAQAAAAGAAIAAAAGAAUAAAAHAAAAAAAGAAMAAAAHAAEAAAAGAAQAAAAHAAIAAAAGAAUAAAAIAAAAAAAEAAMAAAAIAAEAAAAEAAQAAAAIAAIAAAAEAAUAAAAJAAAAAAAHAAMAAAAJAAEAAAAHAAQAAAAJAAIAAAAHAAUAAAACAAQAAAADAAUAAAA=")
+tile_set = SubResource("TileSet_ql73s")
+script = ExtResource("7_68em5")
+
+[node name="resume_button" type="Button" parent="pause_container/pause_menu" unique_id=1196085286]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = 24.0
+offset_right = 133.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "RESUME"
+icon = SubResource("AtlasTexture_68em5")
+flat = true
+icon_alignment = 1
+
+[node name="settings_button" type="Button" parent="pause_container/pause_menu" unique_id=1392997436]
+process_mode = 2
+offset_left = 58.0
+offset_top = 43.66668
+offset_right = 133.0
+offset_bottom = 69.66668
+theme_override_font_sizes/font_size = 14
+text = "SETTINGS"
+icon = SubResource("AtlasTexture_4jyoo")
+flat = true
+icon_alignment = 1
+
+[node name="save_game_button" type="Button" parent="pause_container/pause_menu" unique_id=386900309]
+process_mode = 2
+offset_left = 58.0
+offset_top = 63.66668
+offset_right = 133.0
+offset_bottom = 89.66668
+theme_override_font_sizes/font_size = 14
+text = "SAVE GAME"
+icon = SubResource("AtlasTexture_4jyoo")
+flat = true
+icon_alignment = 1
+
+[node name="quit_button" type="Button" parent="pause_container/pause_menu" unique_id=741332264]
+process_mode = 2
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 58.0
+offset_top = 83.66666
+offset_right = 133.0
+offset_bottom = 109.66666
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "MAIN MENU"
+icon = SubResource("AtlasTexture_iooiy")
+flat = true
+icon_alignment = 1
+
+[node name="design" type="Sprite2D" parent="pause_container/pause_menu" unique_id=672566164]
+process_mode = 2
+position = Vector2(95.33333, 13.333334)
+texture = SubResource("AtlasTexture_rceul")
+
+[node name="paused_text" type="Label" parent="pause_container/pause_menu/design" unique_id=2032499622]
+process_mode = 2
+offset_left = -16.000002
+offset_top = -8.0
+offset_right = 15.999998
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 14
+text = "PAUSED"
+
+[node name="inventory_container" type="Control" parent="." unique_id=990898422]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="inventory_menu" type="TileMapLayer" parent="inventory_container" unique_id=476604079 groups=["inventory"]]
+process_mode = 3
+visible = false
+position = Vector2(0, -229.99998)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAD9/wEAAAAGAAQAAAD+/wEAAAAEAAQAAAD//wEAAAAFAAQAAAAAAAEAAAAGAAQAAAABAAEAAAAFAAQAAAACAAEAAAAGAAQAAAD6/wEAAAAGAAQAAAD7/wEAAAAEAAQAAAD8/wEAAAAFAAQAAAADAAEAAAAFAAQAAAAEAAEAAAAGAAQAAAAFAAEAAAAEAAQAAAAGAAEAAAAFAAQAAAD5/wEAAAAFAAQAAAAGAAkAAAAFAAYAAAD5/wkAAAAFAAYAAAD6/wkAAAAGAAYAAAD7/wkAAAAEAAYAAAD8/wkAAAAFAAYAAAD+/wkAAAAEAAYAAAD//wkAAAAFAAYAAAAAAAkAAAAEAAYAAAD9/wkAAAAGAAYAAAABAAkAAAAFAAYAAAACAAkAAAAGAAYAAAADAAkAAAAEAAYAAAAEAAkAAAAFAAYAAAAFAAkAAAAEAAYAAAAGAAUAAAAFAAUAAAAGAAYAAAAFAAYAAAAGAAcAAAAFAAQAAAAGAAgAAAAFAAUAAAAGAAIAAAAFAAUAAAAGAAMAAAAFAAYAAAAGAAQAAAAFAAYAAAD5/wIAAAAFAAUAAAD5/wMAAAAFAAYAAAD5/wQAAAAFAAQAAAD5/wUAAAAFAAUAAAD5/wYAAAAFAAYAAAD5/wcAAAAFAAQAAAD5/wgAAAAFAAUAAAD6/wIAAAAGAAUAAAD6/wMAAAAGAAYAAAD6/wQAAAAGAAQAAAD7/wIAAAAEAAUAAAD7/wMAAAAEAAYAAAD7/wQAAAAFAAYAAAD8/wIAAAAFAAUAAAD8/wMAAAAFAAYAAAD8/wQAAAAGAAYAAAD6/wUAAAAGAAUAAAD6/wYAAAAGAAYAAAD6/wcAAAAGAAQAAAD7/wUAAAAFAAQAAAD7/wYAAAAFAAQAAAD7/wcAAAAEAAQAAAD8/wUAAAAEAAQAAAD8/wYAAAAGAAQAAAD8/wcAAAAFAAQAAAADAAMAAAAFAAYAAAADAAQAAAAEAAYAAAADAAUAAAAEAAYAAAAEAAMAAAAGAAYAAAAEAAQAAAAFAAYAAAAEAAUAAAAFAAYAAAAFAAMAAAAEAAYAAAAFAAQAAAAEAAYAAAAFAAUAAAAEAAUAAAADAAIAAAAFAAUAAAAEAAIAAAAGAAUAAAAFAAIAAAAEAAUAAAAAAAIAAAAGAAUAAAAAAAMAAAAGAAYAAAAAAAQAAAAGAAYAAAABAAIAAAAFAAUAAAABAAMAAAAFAAYAAAABAAQAAAAFAAYAAAACAAIAAAAGAAUAAAACAAMAAAAGAAYAAAACAAQAAAAGAAYAAAD+/wIAAAAEAAUAAAD+/wMAAAAEAAYAAAD+/wQAAAAFAAQAAAD//wIAAAAFAAUAAAD//wMAAAAFAAYAAAD//wQAAAAGAAQAAAD9/wIAAAAGAAUAAAD9/wMAAAAGAAYAAAD9/wQAAAAEAAQAAAD9/wUAAAAFAAQAAAD9/wYAAAAEAAQAAAD+/wUAAAAGAAQAAAD+/wYAAAAFAAQAAAD//wUAAAAEAAQAAAD//wYAAAAGAAQAAAAAAAUAAAAFAAQAAAAAAAYAAAAEAAQAAAAAAAcAAAAEAAQAAAABAAUAAAAGAAQAAAABAAYAAAAFAAQAAAABAAcAAAAFAAQAAAACAAUAAAAGAAQAAAACAAYAAAAGAAQAAAACAAcAAAAGAAQAAAD//wcAAAAFAAQAAAD9/wcAAAAGAAQAAAD+/wcAAAAEAAQAAAD6/wgAAAAGAAUAAAD7/wgAAAAEAAUAAAD8/wgAAAAFAAUAAAD+/wgAAAAEAAUAAAD//wgAAAAFAAUAAAAAAAgAAAAEAAUAAAD9/wgAAAAGAAUAAAABAAgAAAAFAAUAAAACAAgAAAAGAAUAAAADAAYAAAAEAAQAAAADAAcAAAAEAAQAAAADAAgAAAAEAAUAAAAEAAYAAAAFAAQAAAAEAAcAAAAFAAQAAAAEAAgAAAAFAAUAAAAFAAYAAAAEAAYAAAAFAAcAAAAEAAQAAAAFAAgAAAAEAAUAAAD3/wAAAAADAAMAAAAIAAAAAAAHAAMAAAAIAAoAAAAHAAcAAAD4/woAAAAEAAcAAAD3/woAAAADAAcAAAD5/woAAAAFAAcAAAD6/woAAAAGAAcAAAD7/woAAAAEAAcAAAD8/woAAAAFAAcAAAD9/woAAAAGAAcAAAD+/woAAAAEAAcAAAD//woAAAAEAAcAAAAAAAoAAAAFAAcAAAABAAoAAAAGAAcAAAACAAoAAAAEAAcAAAADAAoAAAAFAAcAAAAEAAoAAAAGAAcAAAAFAAoAAAAEAAcAAAAGAAoAAAAFAAcAAAAHAAoAAAAGAAcAAAAIAAcAAAAHAAQAAAAIAAgAAAAHAAUAAAAIAAkAAAAHAAYAAAAIAAQAAAAHAAQAAAAIAAUAAAAHAAUAAAAIAAYAAAAHAAYAAAAIAAEAAAAHAAQAAAAIAAIAAAAHAAUAAAAIAAMAAAAHAAYAAAD3/wcAAAADAAQAAAD3/wgAAAADAAUAAAD3/wkAAAADAAYAAAD3/wQAAAADAAQAAAD3/wUAAAADAAUAAAD3/wYAAAADAAYAAAD3/wEAAAADAAQAAAD3/wIAAAADAAUAAAD3/wMAAAADAAYAAAD4/wAAAAAEAAMAAAD5/wAAAAAFAAMAAAD6/wAAAAAGAAMAAAD7/wAAAAAEAAMAAAD8/wAAAAAFAAMAAAD9/wAAAAAGAAMAAAD+/wAAAAAEAAMAAAD//wAAAAAFAAMAAAAAAAAAAAAGAAMAAAABAAAAAAAEAAMAAAACAAAAAAAFAAMAAAADAAAAAAAGAAMAAAAEAAAAAAAEAAMAAAAFAAAAAAAEAAMAAAAGAAAAAAAFAAMAAAAHAAAAAAAGAAMAAAD4/wEAAAAEAAQAAAD4/wIAAAAEAAUAAAD4/wMAAAAEAAYAAAD4/wQAAAAEAAQAAAD4/wUAAAAEAAUAAAD4/wYAAAAEAAYAAAD4/wcAAAAEAAQAAAD4/wgAAAAEAAUAAAD4/wkAAAAEAAYAAAAHAAcAAAAGAAQAAAAHAAgAAAAGAAUAAAAHAAkAAAAGAAYAAAAHAAQAAAAGAAYAAAAHAAUAAAAGAAUAAAAHAAYAAAAGAAYAAAAHAAIAAAAGAAUAAAAHAAMAAAAGAAYAAAAHAAEAAAAGAAQAAAA=")
+tile_set = SubResource("TileSet_v0s4m")
+script = ExtResource("8_wu6n0")
+
+[node name="equipment_panel" type="TileMapLayer" parent="inventory_container/inventory_menu" unique_id=1398933284]
+position = Vector2(-208, 0)
+tile_map_data = PackedByteArray("AAAIAAAAAAAGAAMAAAAFAAAAAAAEAAMAAAAGAAAAAAAFAAMAAAAHAAAAAAAGAAMAAAAEAAAAAAADAAMAAAAEAAoAAAADAAcAAAAFAAoAAAAEAAcAAAAGAAoAAAAFAAcAAAAHAAoAAAAGAAcAAAAIAAoAAAAGAAcAAAAIAAcAAAAGAAQAAAAIAAgAAAAGAAUAAAAIAAkAAAAGAAYAAAAIAAQAAAAGAAYAAAAIAAUAAAAGAAUAAAAIAAYAAAAGAAYAAAAIAAEAAAAGAAQAAAAIAAIAAAAGAAUAAAAIAAMAAAAGAAYAAAAEAAEAAAADAAQAAAAEAAIAAAADAAUAAAAEAAMAAAADAAYAAAAEAAQAAAADAAQAAAAEAAUAAAADAAUAAAAEAAYAAAADAAYAAAAEAAcAAAADAAQAAAAEAAgAAAADAAUAAAAEAAkAAAADAAYAAAAFAAcAAAAEAAQAAAAFAAgAAAAEAAUAAAAFAAkAAAAEAAYAAAAGAAcAAAAEAAQAAAAGAAgAAAAEAAUAAAAGAAkAAAAEAAYAAAAHAAcAAAAFAAQAAAAHAAgAAAAFAAUAAAAHAAkAAAAFAAYAAAAFAAQAAAAEAAQAAAAFAAUAAAAEAAUAAAAFAAYAAAAEAAYAAAAGAAQAAAAEAAYAAAAGAAUAAAAEAAUAAAAGAAYAAAAEAAYAAAAHAAQAAAAFAAYAAAAHAAUAAAAFAAUAAAAHAAYAAAAFAAYAAAAFAAEAAAAEAAQAAAAFAAIAAAAEAAUAAAAFAAMAAAAEAAYAAAAGAAEAAAAEAAQAAAAGAAIAAAAEAAUAAAAGAAMAAAAEAAYAAAAHAAEAAAAFAAQAAAAHAAIAAAAFAAUAAAAHAAMAAAAFAAYAAAAJAAAAAAAHAAMAAAAJAAoAAAAHAAcAAAAJAAcAAAAHAAQAAAAJAAgAAAAHAAUAAAAJAAkAAAAHAAYAAAAJAAQAAAAHAAQAAAAJAAUAAAAHAAUAAAAJAAYAAAAHAAYAAAAJAAEAAAAHAAQAAAAJAAIAAAAHAAUAAAAJAAMAAAAHAAYAAAA=")
+tile_set = SubResource("TileSet_oeq8l")
+
+[node name="inventory_menu_control" type="Control" parent="inventory_container/inventory_menu" unique_id=314072414]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="item_info_panel" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control" unique_id=596781131 groups=["item_info"]]
+visible = false
+layout_mode = 0
+offset_left = -48.0
+offset_top = 120.799995
+offset_right = 134.40001
+offset_bottom = 165.6
+script = ExtResource("11_ohanr")
+
+[node name="item_name" type="Label" parent="inventory_container/inventory_menu/inventory_menu_control/item_info_panel" unique_id=420938577]
+layout_mode = 0
+offset_left = 3.2
+offset_top = 3.2
+offset_right = 179.19998
+offset_bottom = 16.2
+scale = Vector2(0.8, 0.8)
+
+[node name="item_description" type="Label" parent="inventory_container/inventory_menu/inventory_menu_control/item_info_panel" unique_id=1115154097]
+layout_mode = 0
+offset_left = 3.199997
+offset_top = 10.800026
+offset_right = 296.53333
+offset_bottom = 59.466637
+scale = Vector2(0.6, 0.6)
+
+[node name="use_button" type="Button" parent="inventory_container/inventory_menu/inventory_menu_control/item_info_panel" unique_id=1784495179]
+visible = false
+layout_mode = 0
+offset_left = -85.19998
+offset_top = 19.199997
+offset_right = -10.199982
+offset_bottom = 45.199997
+text = "USE"
+icon = SubResource("AtlasTexture_ar8dh")
+flat = true
+icon_alignment = 1
+
+[node name="drop_button" type="Button" parent="inventory_container/inventory_menu/inventory_menu_control/item_info_panel" unique_id=1002259570]
+visible = false
+layout_mode = 0
+offset_left = -85.19998
+offset_top = -3.1999998
+offset_right = -10.199982
+offset_bottom = 22.8
+text = "DROP"
+icon = SubResource("AtlasTexture_mjsa7")
+flat = true
+icon_alignment = 1
+
+[node name="inventory_grid" type="GridContainer" parent="inventory_container/inventory_menu/inventory_menu_control" unique_id=1742498133]
+layout_mode = 0
+offset_left = -44.73329
+offset_top = 13.333326
+offset_right = 131.26671
+offset_bottom = 107.99999
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 5
+
+[node name="slot_1" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=605426791 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_1" unique_id=651485836]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 33.103447
+offset_bottom = 32.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_2" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1385685983 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_2" unique_id=726061264]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_3" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1466773864 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_3" unique_id=23011186]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_4" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1444059205 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_4" unique_id=549185599]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_5" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1592834606 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_5" unique_id=1443959754]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_6" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=234127024 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_6" unique_id=548479998]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_7" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=515990655 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_7" unique_id=211804200]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_8" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=285998459 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_8" unique_id=595942222]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_9" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1988682933 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_9" unique_id=788059663]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_10" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1173921651 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_10" unique_id=1008901079]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_11" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=1465224 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+item_description = "A simple iron sword forged by a village blacksmith.
+Damage: 6
+Stamina Cost: 10"
+item_display_name = "IRON SWORD"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_11" unique_id=644256996]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_12" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=175176317 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+item_description = "A simple iron sword forged by a village blacksmith.
+Damage: 6
+Stamina Cost: 10"
+item_display_name = "IRON SWORD"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_12" unique_id=1189982397]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_13" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=234145379 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+item_description = "A simple iron sword forged by a village blacksmith.
+Damage: 6
+Stamina Cost: 10"
+item_display_name = "IRON SWORD"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_13" unique_id=1565283892]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_14" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=400769441 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+item_description = "A simple iron sword forged by a village blacksmith.
+Damage: 6
+Stamina Cost: 10"
+item_display_name = "IRON SWORD"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_14" unique_id=33967450]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="slot_15" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid" unique_id=426709449 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+script = ExtResource("9_mp4u5")
+item_description = "A simple iron sword forged by a village blacksmith.
+Damage: 6
+Stamina Cost: 10"
+item_display_name = "IRON SWORD"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/inventory_grid/slot_15" unique_id=2081086148]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="equipment_grid" type="Control" parent="inventory_container/inventory_menu/inventory_menu_control" unique_id=1539490380]
+anchors_preset = 0
+
+[node name="primary_slot" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid" unique_id=181677827 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -92.8
+offset_top = 37.6
+offset_right = -60.80001
+offset_bottom = 37.6
+script = ExtResource("9_mp4u5")
+primary_slot = true
+
+[node name="Label" type="Label" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/primary_slot" unique_id=1144731119]
+layout_mode = 0
+offset_left = 7.6000366
+offset_top = 32.0
+offset_right = 49.600037
+offset_bottom = 45.0
+scale = Vector2(0.4, 0.4)
+text = "PRIMARY"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/primary_slot" unique_id=954293728]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="secondary_slot" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid" unique_id=710879773 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -92.8
+offset_top = 79.2
+offset_right = -60.80001
+offset_bottom = 79.2
+script = ExtResource("9_mp4u5")
+secondary_slot = true
+
+[node name="Label" type="Label" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/secondary_slot" unique_id=376199000]
+layout_mode = 0
+offset_left = 5.599991
+offset_top = 32.000008
+offset_right = 59.59999
+offset_bottom = 45.000008
+scale = Vector2(0.4, 0.4)
+text = "SECONDARY"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/secondary_slot" unique_id=1564509071]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="helmet_slot" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid" unique_id=2325514 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -131.2
+offset_top = 37.6
+offset_right = -99.200005
+offset_bottom = 37.6
+script = ExtResource("9_mp4u5")
+is_helmet_slot = true
+
+[node name="Label" type="Label" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/helmet_slot" unique_id=1493196408]
+layout_mode = 0
+offset_left = 11.200005
+offset_top = 32.0
+offset_right = 35.200005
+offset_bottom = 45.0
+scale = Vector2(0.4, 0.4)
+text = "HEAD"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/helmet_slot" unique_id=1571014324]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 29.999994
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="chestplate_slot" type="Panel" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid" unique_id=131967851 groups=["inventory_slot"]]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = -131.2
+offset_top = 79.2
+offset_right = -99.200005
+offset_bottom = 79.2
+script = ExtResource("9_mp4u5")
+is_chestplate = true
+
+[node name="Label" type="Label" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/chestplate_slot" unique_id=711909372]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 32.000008
+offset_right = 40.0
+offset_bottom = 45.000008
+scale = Vector2(0.4, 0.4)
+text = "TORSO"
+
+[node name="icon" type="TextureRect" parent="inventory_container/inventory_menu/inventory_menu_control/equipment_grid/chestplate_slot" unique_id=1621568335]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 29.999994
+offset_bottom = 29.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="design" type="Sprite2D" parent="inventory_container/inventory_menu" unique_id=381029684]
+position = Vector2(-96, 24.800001)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_qbjc1")
+
+[node name="Label" type="Label" parent="inventory_container/inventory_menu/design" unique_id=1136689244]
+offset_left = -20.333332
+offset_top = -6.000001
+offset_right = 31.666668
+offset_bottom = 6.999999
+scale = Vector2(0.8, 0.8)
+text = "INVENTORY"
+
+[connection signal="button_down" from="pause_button" to="pause_container/pause_menu" method="_on_pause_button_button_down"]
+[connection signal="button_up" from="pause_button" to="pause_container/pause_menu" method="_on_pause_button_button_up"]
+[connection signal="button_down" from="inventory_button" to="inventory_container/inventory_menu" method="_on_inventory_button_button_down"]
+[connection signal="button_up" from="inventory_button" to="inventory_container/inventory_menu" method="_on_inventory_button_button_up"]
+[connection signal="button_down" from="pause_container/pause_menu/resume_button" to="pause_container/pause_menu" method="_on_resume_button_button_down"]
+[connection signal="button_up" from="pause_container/pause_menu/resume_button" to="pause_container/pause_menu" method="_on_resume_button_button_up"]
+[connection signal="button_down" from="pause_container/pause_menu/settings_button" to="pause_container/pause_menu" method="_on_settings_button_button_down"]
+[connection signal="button_up" from="pause_container/pause_menu/settings_button" to="pause_container/pause_menu" method="_on_settings_button_button_up"]
+[connection signal="button_down" from="pause_container/pause_menu/save_game_button" to="pause_container/pause_menu" method="_on_save_game_button_button_down"]
+[connection signal="button_up" from="pause_container/pause_menu/save_game_button" to="pause_container/pause_menu" method="_on_save_game_button_button_up"]
+[connection signal="button_down" from="pause_container/pause_menu/quit_button" to="pause_container/pause_menu" method="_on_quit_button_button_down"]
+[connection signal="button_up" from="pause_container/pause_menu/quit_button" to="pause_container/pause_menu" method="_on_quit_button_button_up"]
+[connection signal="pressed" from="inventory_container/inventory_menu/inventory_menu_control/item_info_panel/use_button" to="inventory_container/inventory_menu/inventory_menu_control/item_info_panel" method="_on_use_button_pressed"]
+[connection signal="pressed" from="inventory_container/inventory_menu/inventory_menu_control/item_info_panel/drop_button" to="inventory_container/inventory_menu/inventory_menu_control/item_info_panel" method="_on_drop_button_pressed"]

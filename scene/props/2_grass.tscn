@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dp4fg4gy3kkvi"]
+
+[ext_resource type="Texture2D" uid="uid://b7uapsx2sp1kd" path="res://asset/object/props1.png" id="1_l31y8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ql73s"]
+atlas = ExtResource("1_l31y8")
+region = Rect2(6, 82, 14, 11)
+
+[node name="2grass" type="Node2D" unique_id=290077557]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=18534159]
+position = Vector2(0, 9)
+texture = SubResource("AtlasTexture_ql73s")
